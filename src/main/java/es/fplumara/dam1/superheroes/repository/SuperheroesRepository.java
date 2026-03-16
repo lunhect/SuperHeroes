@@ -1,6 +1,7 @@
 package es.fplumara.dam1.superheroes.repository;
 
 
+import es.fplumara.dam1.superheroes.model.Franquicia;
 import es.fplumara.dam1.superheroes.model.Superheroes;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public interface SuperheroesRepository {
 
     boolean existsByNombreYApodo(String nombre, String apodo);
 
-    long countByFranquicia(String franquicia);
+    long countByFranquicia(Franquicia franquicia);
 
     void deleteSuperheroe(Long id, String nombre);
 
