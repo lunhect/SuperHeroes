@@ -1,5 +1,4 @@
-package es.fplumara.dam1.superheroes.repository;
-
+package es.fplumara.dam1.superheroes.service;
 
 import es.fplumara.dam1.superheroes.model.Franquicia;
 import es.fplumara.dam1.superheroes.model.Superheroes;
@@ -9,9 +8,9 @@ import java.util.Optional;
 
 public interface SuperheroesRepository {
 
-    Superheroes crearSuperHeroe(Long id, String nombre, String apodo, Franquicia franquicia,String poder);
+    Superheroes crearSuperHeroe(Long id, String nombre, String apodo, Franquicia franquicia, String poder);
 
-    public   void guardarSuperHeroe(Superheroes superheroes);
+    public     void guardarSuperHeroe(Superheroes superheroes);
 
     Optional<Superheroes> findByNombre(String nombre);
 
@@ -26,5 +25,3 @@ public interface SuperheroesRepository {
     long countByFranquicia(Franquicia franquicia);
 
     void deleteSuperheroe(Long id);
-
-}
