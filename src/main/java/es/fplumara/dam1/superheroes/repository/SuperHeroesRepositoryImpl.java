@@ -48,7 +48,7 @@ public class SuperHeroesRepositoryImpl implements SuperheroesRepository{
 
     @Override
     public boolean existsByNombreYApodo(String nombre, String apodo) {
-        return superheroesMap.values().stream().filter(s -> s.getNombre().equalsIgnoreCase(nombre) && s.getApodo().equalsIgnoreCase(apodo))
+        return superheroesMap.values().stream().anyMatch(s -> s.getNombre().equalsIgnoreCase(nombre) && s.getApodo().equalsIgnoreCase(apodo));
     }
 
 
