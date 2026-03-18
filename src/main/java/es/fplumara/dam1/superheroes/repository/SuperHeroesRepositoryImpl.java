@@ -11,7 +11,20 @@ import java.util.stream.Collectors;
 
 public class SuperHeroesRepositoryImpl implements SuperheroesRepository{
 
-Map<Long,Superheroes> superheroesMap = new HashMap<>();
+    Map<Long,Superheroes> superheroesMap = new HashMap<>();
+
+    @Override
+    public Superheroes crearSuperHeroe(Long id, String nombre, String apodo, Franquicia franquicia, String poder) {
+
+        Superheroes superheroes = new Superheroes(id, nombre, apodo, franquicia, poder);
+
+        return superheroesMap.put(id,superheroes);
+    }
+
+    @Override
+    public void guardarSuperHeroe(Superheroes superheroe) {
+        superheroesMap.put(superheroe.getId(), superheroe);
+    }
 
     @Override
     public Optional<Superheroes> findByNombre(String nombre) {
@@ -45,7 +58,8 @@ Map<Long,Superheroes> superheroesMap = new HashMap<>();
     }
 
     @Override
-    public void deleteSuperheroe(Long id, String nombre) {
-
+    public void deleteSuperheroe(Long id ) {
+        superheroesMap.remove(id);
     }
 }
+
